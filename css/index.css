@@ -9,3 +9,7 @@
   align-items: center;
   justify-content: space-around;
 }
+
+.navigation img {
+  cursor: pointer;
+}
