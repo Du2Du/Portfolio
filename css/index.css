@@ -1,10 +1,10 @@
 .navigation {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   height: 8%;
   width: 100%;
-  background: #fff;
-  opacity: 30%;
+  background: #784ba0;
+  opacity: 35%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -12,4 +12,35 @@
 
 .navigation img {
   cursor: pointer;
+}
+
+.title {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.title h1 {
+  text-align: center;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  margin: auto;
+  height: 3px;
+  top: 9%;
+  background-color: #f0f0f0;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.title:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
