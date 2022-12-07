@@ -44,7 +44,7 @@ window.addEventListener("load", async () => {
     <div class="tags">
       ${topics.map((topic) => ` <span class="tag">${topic}</span>`).join("")}  
     </div>
-    <div class="description">${description}</div>
+    <div class="description">${description ?? ""}</div>
     <hr/>
     <div class="links">
       <span class="url" onclick='redirectPage("${html_url}")'>Github</span>
@@ -55,6 +55,6 @@ window.addEventListener("load", async () => {
           : ""
       }
     </div>
-  </div>
+  </div>  
   `;
 });
