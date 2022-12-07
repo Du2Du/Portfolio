@@ -1,17 +1,19 @@
 function redirectPage(url) {
   window.location.assign(url);
 }
+async function isUrlFound(name) {
+  try {
+    const response = await fetch(`../assets/projects/${name}.png`, {
+      method: "HEAD",
+      cache: "no-cache",
+    });
 
-function fileExists(name) {
-  if (url) {
-    var req = new XMLHttpRequest();
-    req.open("GET", `../assets/projects/${name}.png`, false);
-    req.send();
-    return true;
-  } else {
+    return response.status === 200;
+  } catch (error) {
     return false;
   }
 }
+
 window.addEventListener("load", async () => {
   const projectsDiv = document.getElementById("projects");
   const data = await fetch("https://api.github.com/users/Du2Du/repos");
@@ -19,10 +21,13 @@ window.addEventListener("load", async () => {
   console.log(projects);
 
   projectsDiv.innerHTML = projects
-    .map((project) => {
+    .map(async (project) => {
       const { id, name } = project;
-      // console.log(is_img(name));
-      const img = fileExists(name) ? name : "../assets/projects/notImg.jpg";
+
+      const img = (await isUrlFound(name))
+        ? `../assets/projects/${name}.png`
+        : "../assets/projects/notImg.jpg";
+
       return id !== 574497729
         ? `<div class="project">
         <img
