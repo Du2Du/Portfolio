@@ -18,12 +18,11 @@ window.addEventListener("load", async () => {
   const projectsDiv = document.getElementById("projects");
   const data = await fetch("https://api.github.com/users/Du2Du/repos");
   const projects = await data.json();
-  console.log(projects);
 
   projectsDiv.innerHTML = (
     await Promise.all(
       projects.map(async (project) => {
-        const { id, name } = project;
+        const { id, name, stargazers_count: stars } = project;
 
         const img = (await isUrlFound(name))
           ? `../assets/projects/${name}.png`
@@ -36,7 +35,17 @@ window.addEventListener("load", async () => {
          alt="ProjectImg"
          width="290"
          height="200" />
-        <span>${name}</span>
+        <div class="info">
+          <span>${name}</span>
+          <div class="stars">
+            ${stars}
+            <img
+            src="../assets/star.png"
+            alt="Star Icon by Chamestudio on IconScout"
+            width="24"
+            height="24" />
+          </div>
+        </div>
       </div>`
           : null;
       })

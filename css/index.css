@@ -58,14 +58,28 @@
   flex-direction: column;
   align-items: start;
   background: #380759;
-  margin: 10px 0;
+  margin: 15px 0;
   padding: 10px 10px 15px;
   border-radius: 5px;
 }
 #projects .project img {
   object-fit: contain;
 }
-#projects .project span {
+#projects .project .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#projects .project .info span {
   font-weight: 700;
   font-size: 18px;
+}
+#projects .project .info .stars {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+}
+#projects .project .info .stars img {
+  margin-left: 3px;
 }
