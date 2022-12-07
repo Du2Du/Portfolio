@@ -29,7 +29,7 @@ window.addEventListener("load", async () => {
           : "../assets/projects/notImg.jpg";
 
         return id !== 574497729 && id !== 401799527 && id !== 384554189
-          ? `<div class="project" onclick='redirectPage(${id})'>
+          ? `<div class="project" onclick='redirectPage("../html/project.html?id=${id}")'>
         <img
          src="${img}"
          alt="ProjectImg"

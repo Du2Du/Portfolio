@@ -1,0 +1,83 @@
+#project {
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#project .img {
+  width: 100%;
+  height: 35%;
+}
+
+#project .img img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+#project .info .principalInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+#project .info .principalInfo .statusOn,
+.statusOff,
+#project .info .tags .tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+#project .info .principalInfo .statusOn {
+  background: #15b415;
+}
+
+#project .info .tags {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  margin: 5px 0 10px;
+}
+#project .info .tags .tag:first-child {
+  margin-left: 0 !important;
+}
+
+#project .info .tags .tag {
+  background: #097299;
+  margin: 0 5px;
+}
+
+#project .info .principalInfo .statusOff {
+  background: #c4273c;
+}
+
+#project .info .principalInfo .projectName {
+  font-size: 24px;
+}
+
+#project .info .description {
+  max-height: 100%;
+  flex-wrap: wrap;
+  font-size: 20px;
+  margin: 5px 0 10px;
+}
+#project .info .links {
+  margin: 15px 0;
+}
+#project .info .links .url,
+.domain {
+  font-size: 22px;
+  cursor: pointer;
+}
+#project .info .links .url {
+  border-right: 1px solid #fff;
+  padding-right: 10px;
+}
+#project .info .links .domain {
+  margin-left: 10px;
+}
+#project .info .links .url:hover,
+.domain:hover {
+  color: #b8a0d9;
+}
