@@ -1,0 +1,85 @@
+.navigation {
+  position: fixed;
+  bottom: 0;
+  height: 8%;
+  width: 100%;
+  background: #670aa6;
+  display: flex;
+  opacity: 90%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navigation img {
+  cursor: pointer;
+}
+
+.title {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.title h1 {
+  text-align: center;
+}
+
+.title:before {
+  content: "";
+  position: absolute;
+  width: 40%;
+  margin: auto;
+  height: 3px;
+  top: 9%;
+  background-color: #f0f0f0;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.title:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#projects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#projects .project {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background: #380759;
+  margin: 15px 0;
+  padding: 10px 10px 15px;
+  border-radius: 5px;
+}
+#projects .project img {
+  object-fit: contain;
+}
+#projects .project .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#projects .project .info span {
+  font-weight: 700;
+  font-size: 18px;
+}
+#projects .project .info .stars {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+}
+#projects .project .info .stars img {
+  margin-left: 3px;
+}
