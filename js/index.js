@@ -20,24 +20,26 @@ window.addEventListener("load", async () => {
   const projects = await data.json();
   console.log(projects);
 
-  projectsDiv.innerHTML = projects
-    .map(async (project) => {
-      const { id, name } = project;
+  projectsDiv.innerHTML = (
+    await Promise.all(
+      projects.map(async (project) => {
+        const { id, name } = project;
 
-      const img = (await isUrlFound(name))
-        ? `../assets/projects/${name}.png`
-        : "../assets/projects/notImg.jpg";
+        const img = (await isUrlFound(name))
+          ? `../assets/projects/${name}.png`
+          : "../assets/projects/notImg.jpg";
 
-      return id !== 574497729
-        ? `<div class="project">
+        return id !== 574497729 && id !== 401799527
+          ? `<div class="project">
         <img
          src="${img}"
          alt="ProjectImg"
-         width="300"
-         height="300" />
+         width="290"
+         height="200" />
         <span>${name}</span>
       </div>`
-        : null;
-    })
-    .join("");
+          : null;
+      })
+    )
+  ).join("");
 });
