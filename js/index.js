@@ -43,6 +43,7 @@ window.addEventListener("load", async () => {
             src="../assets/star.png"
             alt="Star Icon by Chamestudio on IconScout"
             width="24"
+            class="starImg"
             height="24" />
           </div>
         </div>

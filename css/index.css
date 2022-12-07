@@ -60,7 +60,7 @@
   align-items: start;
   background: #380759;
   margin: 15px;
-  padding: 10px 10px 15px;
+  padding: 0 10px 13px 10px;
   border-radius: 5px;
 }
 #projects .project img {
@@ -83,4 +83,7 @@
 }
 #projects .project .info .stars img {
   margin-left: 3px;
+}
+#projects .project .info .stars .starImg {
+  margin-bottom: 4px;
 }
